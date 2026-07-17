@@ -18,9 +18,6 @@ export default {
 /idea
 レポート構成を提案します
 
-/title
-タイトル案を提案します
-
 /check
 文章を添削します
 
