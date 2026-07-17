@@ -46,7 +46,9 @@ export default {
 `${row.id}.
 コマンド：${row.command}
 内容：${row.input}
-日時：${row.created_at}
+日時：${new Date(row.created_at).toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo"
+})}
 
 `;
 
@@ -61,7 +63,7 @@ export default {
             console.error(error);
 
             await interaction.editReply(
-                "履歴取得中にエラーが発生しました。"
+                "履歴取得中にエラーが発生しました。時間を置いてもう一度試してください。"
             );
 
         }

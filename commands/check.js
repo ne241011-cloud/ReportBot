@@ -5,8 +5,6 @@ import { replyLong } from "../utils/discord.js";
 import { generateText } from "../utils/gemini.js";
 import pool from "../database/db.js";
 
-console.log("API Key:", process.env.GEMINI_API_KEY);
-
 export default {
 
     data: {
@@ -78,7 +76,7 @@ ${text}
             console.error(error);
 
             await interaction.editReply(
-                "エラーが発生しました。"
+                "文章の添削中にエラーが発生しました。時間を置いて再度試してください。"
             );
 
         }

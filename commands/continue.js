@@ -5,9 +5,6 @@ import { replyLong } from "../utils/discord.js";
 import { generateText } from "../utils/gemini.js";
 import pool from "../database/db.js";
 
-console.log("API Key:", process.env.GEMINI_API_KEY);
-
-
 export default {
 
     data: {
@@ -72,6 +69,8 @@ ${history.response}
 
 ただ改善案を出すだけではなく、
 過去の相談内容を踏まえた説明をしてください。
+最後は質問形式で終わらせず、
+提案内容のまとめで終了してください。
 
 `;
 const text = await generateText(prompt);
@@ -88,7 +87,7 @@ const text = await generateText(prompt);
             console.error(error);
 
             await interaction.editReply(
-                "続きを生成中にエラーが発生しました。"
+                "過去の相談内容を取得できませんでした。時間を置いてもう一度試してください。"
             );
 
         }

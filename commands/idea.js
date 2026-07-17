@@ -70,9 +70,9 @@ ${theme}
             console.error(error);
 
             if (interaction.deferred || interaction.replied) {
-                await interaction.editReply("エラーが発生しました。");
+                await interaction.editReply("レポート構成案の生成中にエラーが発生しました。時間を置いてもう一度試してください。");
             } else {
-                await interaction.reply("エラーが発生しました。");
+                await interaction.reply("レポート構成案の生成中にエラーが発生しました。時間を置いてもう一度試してください。");
             }
 
         }
